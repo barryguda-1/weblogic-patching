@@ -10,7 +10,7 @@ Now how to apply patches in weblogic in 10.3.6
 ## 0.Stop the weblogic server
 
 ### Export needed PATH variables
-    ```bash
+    ```
     export MW_HOME=/u01/app/oracle/product/fmw11g
     export WLS_HOME=$MW_HOME/wlserver_10.3
     export WL_HOME=$WLS_HOME
@@ -21,7 +21,7 @@ Now how to apply patches in weblogic in 10.3.6
 ## 1.First unzip the patch to {MW_HOME}/utils/bsu/
 
 ### For Unix/Linux
-    ```bash
+    ```
     [oracle@XXXXXXX tmp]$  unzip p26519424_1036_Generic.zip -d $MW_HOME/utils/bsu/cache_dir
     ```
 
@@ -37,7 +37,7 @@ Now how to apply patches in weblogic in 10.3.6
 ## 2.Navigate to the {MW_HOME}/utils/bsu directory and Apply the patch.
 
 ### For Unix/Linux
-    ```bash
+    ```
     $ cd $MW_HOME/utils/bsu
     $ [oracle@XXXXXXX bsu]$ ./bsu.sh -install -patch_download_dir=$MW_HOME/utils/bsu/cache_dir -patchlist=FMJJ -prod_dir=$WLS_HOME -log=/tmp/weblogic_patching.log
     Exception in thread "Main Thread" java.lang.OutOfMemoryError
@@ -58,7 +58,7 @@ Now how to apply patches in weblogic in 10.3.6
     ```
 
 ## 3.If you get conflicts, you may have to remove previous patches, before attempting to apply the patch again.
-    ```bash
+    ```
     [oracle@xxxxxxxxx bsu]$ ./bsu.sh -install -patch_download_dir=$MW_HOME/utils/bsu/cache_dir -patchlist=FMJJ -prod_dir=$WLS_HOME -log=/tmp/weblogic_patching.log
     Checking for conflicts........
     Conflict(s) detected - resolve conflict condition and execute patch installation again
@@ -85,7 +85,7 @@ Now how to apply patches in weblogic in 10.3.6
 ## 4. Check Version is Updated
 
 ### Source CLASSPATH values
-    ```bash
+    ```
     [oracle@xxxxxx bsu]$ . $WLS_HOME/server/bin/setWLSEnv.sh
     CLASSPATH=/u01/app/oracle/product/fmw11g/patch_wls1036/profiles/default/sys_manifest_classpath/weblogic_patch.jar:/u01/app/oracle/product/fmw11g/patch_ocp371/profiles/default/sys_manifest_classpath/weblogic_patch.jar:/u01/app/oracle/jdk1.8.0_45/lib/tools.jar:/u01/app/oracle/product/fmw11g/wlserver_10.3/server/lib/weblogic_sp.jar:/u01/app/oracle/product/fmw11g/wlserver_10.3/server/lib/weblogic.jar:/u01/app/oracle/product/fmw11g/modules/features/weblogic.server.modules_10.3.6.0.jar:/u01/app/oracle/product/fmw11g/wlserver_10.3/server/lib/webservices.jar:/u01/app/oracle/product/fmw11g/modules/org.apache.ant_1.7.1/lib/ant-all.jar:/u01/app/oracle/product/fmw11g/modules/net.sf.antcontrib_1.1.0.0_1-0b2/lib/ant-contrib.jar:
 
@@ -95,7 +95,7 @@ Now how to apply patches in weblogic in 10.3.6
     ```
 
 ### Check version is set
-    ```bash
+    ```
     [oracle@xxxxx bsu]$ java weblogic.version
 
     WebLogic Server 10.3.6.0.171017 PSU Patch for BUG26519424 TUE SEP 12 18:34:42 IST 2017
