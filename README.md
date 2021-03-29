@@ -10,13 +10,13 @@ Now how to apply patches in weblogic in 10.3.6
 ## 0.Stop the weblogic server
 
 ### Export needed PATH variables
-    ```
+    
     export MW_HOME=/u01/app/oracle/product/fmw11g
     export WLS_HOME=$MW_HOME/wlserver_10.3
     export WL_HOME=$WLS_HOME
     export JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.41.x86_64
     export PATH=$JAVA_HOME/bin:$PATH
-    ```
+    
 
 ## 1.First unzip the patch to {MW_HOME}/utils/bsu/
 
